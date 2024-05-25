@@ -8,8 +8,8 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class SocialNetworksController {
     public function index(Request $request, Response $response, $args): Response {
-        $header_data = SocialNetworks::all();
-        $payload = json_encode($header_data);
+        $social_networks = SocialNetworks::all();
+        $payload = json_encode($social_networks);
         
         $response->getBody()->write($payload);
         return $response->withHeader('Content-Type', 'application/json');
