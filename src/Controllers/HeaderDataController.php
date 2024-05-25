@@ -8,7 +8,7 @@ use Psr\Http\Message\ServerRequestInterface as Request;
 
 class HeaderDataController {
     public function index(Request $request, Response $response, $args): Response {
-        $header_data = HeaderData::all()->first();
+        $header_data = HeaderData::first();
         $payload = json_encode($header_data);
         
         $response->getBody()->write($payload);
