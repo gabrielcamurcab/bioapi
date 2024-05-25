@@ -1,0 +1,16 @@
+{
+    "name": "gabrielcamurcab/bioapi",
+    "type": "project",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Gabriel Camurça",
+            "email": "projetosdocamurca@gmail.com"
+        }
+    ],
+    "require": {}
+}
