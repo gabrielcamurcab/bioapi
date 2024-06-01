@@ -3,12 +3,15 @@
 namespace App\Controllers;
 
 use App\Models\Events;
+use DateTime;
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 
 class EventsController {
     public function index(Request $request, Response $response, $args): Response {
-        $header_data = Events::first();
+        $currentDatetime = new DateTime();
+
+        $header_data = Events::where('datetime', '>=', $currentDatetime)->orderBy('datetime', 'desc')->first();
         $payload = json_encode($header_data);
         
         $response->getBody()->write($payload);
